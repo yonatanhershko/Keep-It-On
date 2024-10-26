@@ -5,6 +5,9 @@ import Dashboard from "./cmps/dashboard/Dashboard";
 import ProjectDetials from "./cmps/projects/ProjectDetials";
 import { SignIn } from "./cmps/auth/SignIn";
 import { SignUp } from "./cmps/auth/SignUp";
+import { CreateProject } from "./cmps/projects/CreateProject";
+// import marioBg from "../public/imgs/mario-bg.png";
+
 function App() {
     return (
         <BrowserRouter>
@@ -13,8 +16,9 @@ function App() {
                 <Routes>
                     <Route exact path="/" element={<Dashboard />} />
                     <Route path="/project/:id" element={<ProjectDetials />} />
-                    <Route path="/singin" element={<SignIn />} />
-                    <Route path="/singup" element={<SignUp />} />
+                    <Route path="/signin" element={<SignIn />} />
+                    <Route path="/signup" element={<SignUp />} />
+                    <Route path="/create" element={<CreateProject />} />
                 </Routes>
             </div>
         </BrowserRouter>
