@@ -1,13 +1,14 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
+import { createProject } from "../../store/action/projectAction";
 
-export class CreateProject extends Component {
+class CreateProject extends Component {
     state = {
         title: "",
         content: "",
     };
 
     handleChange = (e) => {
-        console.log(e);
         this.setState({
             [e.target.id]: e.target.value,
         });
@@ -15,8 +16,12 @@ export class CreateProject extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault();
-        console.log(this.state);
+        this.props.createProject(this.state);
+        console.log(this.state, "1");
+        console.log(this.props, "2");
+        console.log(this.props.createProject, "3");
     };
+
     render() {
         return (
             <div className="container">
@@ -33,7 +38,7 @@ export class CreateProject extends Component {
                         />
                     </div>
                     <div className="input-field">
-                        <label htmlFor="content"> Project Content</label>
+                        <label htmlFor="content">Project Content</label>
                         <textarea
                             id="content"
                             className="materialize-textarea"
@@ -50,3 +55,12 @@ export class CreateProject extends Component {
         );
     }
 }
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        createProject: (project) => dispatch(createProject(project)),
+    };
+};
+
+const ConnectedCreateProject = connect(null, mapDispatchToProps)(CreateProject);
+export default ConnectedCreateProject;

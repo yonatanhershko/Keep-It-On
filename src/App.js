@@ -5,7 +5,7 @@ import Dashboard from "./cmps/dashboard/Dashboard";
 import ProjectDetials from "./cmps/projects/ProjectDetials";
 import { SignIn } from "./cmps/auth/SignIn";
 import { SignUp } from "./cmps/auth/SignUp";
-import { CreateProject } from "./cmps/projects/CreateProject";
+import CreateProject from "./cmps/projects/CreateProject";
 // import marioBg from "../public/imgs/mario-bg.png";
 
 function App() {
